@@ -65,3 +65,21 @@ body {
   display: flex;
   align-items: flex-end;
 }
+
+.list-item::before {
+  content: '';
+  position: absolute;
+  width: 110%;
+  left: -5%;
+  top: calc(50% - 1px);
+  height: 2px;
+  transform: scale(0);
+  background-color: var(--text-color);
+  border-radius: 20px;
+  z-index: 1;
+  transition: transform 200ms ease-in-out;
+}
+
+.list-item:hover::before {
+  transform: scale(1);
+}
